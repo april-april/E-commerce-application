@@ -47,7 +47,8 @@ class EditProfile extends Component {
         const user = {
             name: this.state.name || undefined,
             email: this.state.email || undefined,
-            password: this.state.password || undefined
+            password: this.state.password || undefined,
+            seller: this.state.seller
         }
         update({
             userId: this.match.params.userId
@@ -55,9 +56,11 @@ class EditProfile extends Component {
             t: jwt.token
         }, user).then((data) => {
             if (data.error) {
-                this.setState({error: data.error})
+              this.setState({error: data.error})
             } else {
-                this.setState({'userId': data._id, 'redirectToProfile': true})
+              auth.updateUser(data, ()=> {
+                  this.setState({'userId':data._id,'redirectToProfile': true})
+                })
             }
         })
     }
@@ -65,7 +68,7 @@ class EditProfile extends Component {
     handleChange = name => event => {
         this.setState({[name]: event.target.value})
     }
-    
+
     handleCheck = (event, checked) => {
         this.setState({'seller': checked})
     }
