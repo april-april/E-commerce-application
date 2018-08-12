@@ -1,4 +1,5 @@
-# Another One (In the voice of dj khalid) 
+# e-commerce application (in progress)
+Another One (In the voice of dj khalid) 
 group project that is in progress
 
 
@@ -45,5 +46,5 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-* Thomas Nguyen 
 * Everyone that has assisted me in this journey
+* The Javascript Gods
