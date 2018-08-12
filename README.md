@@ -1,4 +1,5 @@
-# Another One (In the voice of dj khalid)
+# Another One (In the voice of dj khalid) 
+group project that is in progress
 
 
 ## Getting Started
@@ -26,6 +27,7 @@ npm start
 * [Node.js](https://nodejs.org/en/)
 * [Express](https://expressjs.com/) 
 * [MongoDB](https://www.mongodb.com/) 
+* [React](https://reactjs.org/)
 
 ## Contributing
 
@@ -33,7 +35,7 @@ npm start
 ## Authors
 
 * **Vincent Luong** - *Initial work* - [Vincent Luong](https://github.com/april-april)
-* **Thomas Nguyen** - *Everything* - [Thomas Nguyen](https://github.com/thomasnguyen)
+* **Thomas Nguyen** - *Design and Database* - [Thomas Nguyen](https://github.com/thomasnguyen)
 
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
@@ -43,5 +45,5 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-* Thomas Nguyen
+* Thomas Nguyen 
 * Everyone that has assisted me in this journey
