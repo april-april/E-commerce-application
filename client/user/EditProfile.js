@@ -65,6 +65,10 @@ class EditProfile extends Component {
     handleChange = name => event => {
         this.setState({[name]: event.target.value})
     }
+    
+    handleCheck = (event, checked) => {
+        this.setState({'seller': checked})
+    }
 
     render(){
         const { classes } = this.props
