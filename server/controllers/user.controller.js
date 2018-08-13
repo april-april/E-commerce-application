@@ -75,12 +75,23 @@ const remove = (req, res, next) => {
   })
 }
 
+const isSeller = (req, res, next) => {
+	const isSeller = req.profile && req.profile.seller
+	if (!isSeller) {
+		return res.status('403').json({
+			error: "User is not a seller"
+		})
+	}
+	next()
+}
+
 export default {
-  create,
-  userByID,
-  read,
-  list,
-  remove,
-  update
+	create,
+	userByID,
+	read,
+	list,
+	remove,
+	update,
+	isSeller
 }
         
