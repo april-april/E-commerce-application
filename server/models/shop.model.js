@@ -6,6 +6,14 @@ const ShopSchema = new mongoose.Schema({
         type: String,
         trim: true,
         required: 'Name is required'
+    },
+    image: {
+        data: Buffer,
+        contentType: String
+    },
+    description: {
+        type: String,
+        trim: true
     }
 })
 
