@@ -1,3 +1,4 @@
+import Shop from '../models/shop.model'
 
 const create = (req, res, next) => {
     let form = new formidable.IncomingForm()
@@ -9,8 +10,8 @@ const create = (req, res, next) => {
             })
         }
         let shop = new Shop(fields)
-        shop.owner= req.profile
-        if(files.image){
+        shop.owner = req.profile
+        if (files.image) {
             shop.image.data = fs.readFileSync(files.image.path)
             shop.image.contentType = files.image.type
         }
@@ -24,3 +25,5 @@ const create = (req, res, next) => {
         })
     })
 }
+
+export default create
