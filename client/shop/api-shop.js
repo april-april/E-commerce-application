@@ -8,6 +8,10 @@ const create = (params, credentials, shop) => {
         body: shop
     })
     .then((response) => {
+        return response.json()
     }).catch((err) => console.log(err))
 }
-  
+
+export {
+    create
+}
