@@ -46,7 +46,7 @@ class NewShop extends Component {
                     <input accept="image/*" onChange={this.handleChange('image')} className={classes.input} id="icon-button-file" type="file" />
                     <label htmlFor="icon-button-file">
                         <Button variant="raised" color="secondary" component="span">
-                        Upload 
+                            Upload 
                             <FileUpload/>
                         </Button>
                     </label> <span className={classes.filename}>{this.state.image ? this.state.image.name : ''}</span><br/>
@@ -60,9 +60,16 @@ class NewShop extends Component {
                         onChange={this.handleChange('description')}
                         className={classes.textField}
                         margin="normal"
-                    /><br/> 
+                    /><br/> {
+                        this.state.error && (<Typography component="p" color="error">
+                        <Icon color="error" className={classes.error}>error</Icon>
+                        {this.state.error}</Typography>)
+                    }
                 </CardContent>
-
+                <CardActions>
+                    <Button color="primary" variant="raised" onClick={this.clickSubmit} className={classes.submit}>Submit</Button>
+                    <Link to='/seller/shops' className={classes.submit}><Button variant="raised">Cancel</Button></Link>
+                </CardActions>
             </Card>
         </div>)
 
