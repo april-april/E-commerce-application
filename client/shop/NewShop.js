@@ -33,7 +33,7 @@ class NewShop extends Component {
     componentDidMount = () => {
         this.shopData = new FormData()
     }
-    
+
     handleChange = name => event => {
         const value = name === 'image'
             ? event.target.files[0]
@@ -42,7 +42,19 @@ class NewShop extends Component {
         this.setState({ [name]: value })
     }
 
+    clickSubmit = () => {
+        const jwt = auth.isAuthenticated()
+        create({
+            // tbd
+        })
+
+    }
+
     render(){
+        if (this.state.redirect) {
+            return (<Redirect to={'/seller/shops'}/>)
+        }
+
         const { classes } = this.props
         return (
         <div>
@@ -83,6 +95,10 @@ class NewShop extends Component {
         </div>)
 
     }
+}
+
+NewShop.propTypes = {
+    classes: PropTypes.object.isRequired
 }
 
 export default withStyles(styles)(NewShop)
