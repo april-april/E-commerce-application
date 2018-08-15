@@ -10,4 +10,7 @@ router.route('/api/shops')
 
 router.route('/api/shops/by/:userId')
     .post(authCtrl.requireSignin, authCtrl.hasAuthorization, userCtrl.isSeller, shopCtrl.create)
+    .get(authCtrl.requireSignin, authCtrl.hasAuthorization, shopCtrl.listByOwner)
+
+router.param('userId', userCtrl.userByID)
 
