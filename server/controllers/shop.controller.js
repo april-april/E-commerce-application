@@ -26,4 +26,18 @@ const create = (req, res, next) => {
     })
 }
 
-export default create
+const list = (req, res) => {
+    Shop.find((err, shops) => {
+        if (err) {
+            return res.status(400).json({
+                error: errorHandler.getErrorMessage(err)
+            })
+        }
+        res.json(shops)
+    })
+}
+
+export default {
+    create,
+    list
+}
