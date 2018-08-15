@@ -45,7 +45,15 @@ class NewShop extends Component {
     clickSubmit = () => {
         const jwt = auth.isAuthenticated()
         create({
-            // tbd
+            userId: jwt.user._id
+        }, {
+            t: jwt.token
+        }, this.shopData).then((data) => {
+            if (data.error) {
+                this.setState({error: data.error})
+            } else {
+                this.setState({error: '', redirect: true})
+            }
         })
 
     }
