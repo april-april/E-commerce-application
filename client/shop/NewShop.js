@@ -29,8 +29,17 @@ class NewShop extends Component {
         redirect: false,
         error: ''
     }
+
     componentDidMount = () => {
         this.shopData = new FormData()
+    }
+    
+    handleChange = name => event => {
+        const value = name === 'image'
+            ? event.target.files[0]
+            : event.target.value
+        this.shopData.set(name, value)
+        this.setState({ [name]: value })
     }
 
     render(){
