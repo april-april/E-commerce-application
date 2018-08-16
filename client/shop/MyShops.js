@@ -7,7 +7,7 @@ const styles = theme => ({
 })
 
 class MyShops extends Component {
-    
+
     state = {
         shops:[],
         redirectToSignin: false
@@ -44,6 +44,16 @@ class MyShops extends Component {
         return (
         <div>
             <Paper className={classes.root} elevation={4}>
+            <Typography type="title" className={classes.title}>
+                Your Shops
+                <span className={classes.addButton}>
+                    <Link to="/seller/shop/new">
+                        <Button color="primary" variant="raised">
+                            <Icon className={classes.leftIcon}>add_box</Icon>  New Shop
+                        </Button>
+                    </Link>
+                </span>
+            </Typography>
 
             </Paper>
         </div>
