@@ -32,6 +32,8 @@ const shopByID = (req, res, next, id) => {
         return res.status('400').json({
           error: "Shop not found"
         })
+      req.shop = shop
+      next()
     })
 }
 
@@ -59,5 +61,7 @@ const listByOwner = (req, res) => {
 export default {
     create,
     list,
-    listByOwner
+    listByOwner,
+    shopByID
+
 }
