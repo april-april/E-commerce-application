@@ -1,6 +1,5 @@
 # e-commerce application (in progress)
-Another One (In the voice of dj khalid) 
-group project that is in progress
+still in progress fam
 
 
 ## Getting Started
@@ -10,7 +9,7 @@ Make sure you have the latest version of Node.js installed. If you don't have it
 
 ### Installing
 
-A step by step series of examples that tell you have to get a development environment running
+A step by step series of examples that tell you how to get the development environment running
 
 Intital Install:
 
@@ -31,7 +30,7 @@ npm start
 * [React](https://reactjs.org/)
 
 ## Contributing
-
+Hmm...
 
 ## Authors
 
