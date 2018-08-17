@@ -26,6 +26,15 @@ const create = (req, res, next) => {
     })
 }
 
+const shopByID = (req, res, next, id) => {
+    Shop.findById(id).populate('owner', '_id name').exec((err, shop) => {
+      if (err || !shop)
+        return res.status('400').json({
+          error: "Shop not found"
+        })
+    })
+}
+
 const list = (req, res) => {
     Shop.find((err, shops) => {
         if (err) {
