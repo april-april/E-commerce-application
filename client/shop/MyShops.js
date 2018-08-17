@@ -26,7 +26,13 @@ const styles = theme => ({
         margin: `${theme.spacing.unit * 3}px 0 ${theme.spacing.unit * 3}px ${theme.spacing.unit}px` ,
         color: theme.palette.protectedTitle,
         fontSize: '1.2em'
-      }
+      },
+      addButton:{
+        float:'right'
+      },
+      leftIcon: {
+        marginRight: "8px"
+    }
 
 })
 
