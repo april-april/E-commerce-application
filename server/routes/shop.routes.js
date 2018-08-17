@@ -16,4 +16,5 @@ router.route('/api/shops/by/:userId')
     .get(authCtrl.requireSignin, authCtrl.hasAuthorization, shopCtrl.listByOwner)
 
 router.param('userId', userCtrl.userByID)
+router.param('shopId', shopCtrl.shopByID)
 
