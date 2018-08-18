@@ -19,6 +19,18 @@ class Shop extends Component {
         })
     }
 
+    render() {
+        <CardContent>
+            <Typography type="headline" component="h2" className={classes.title}>
+                {this.state.shop.name}
+            </Typography>
+            <br/>
+            <Avatar src={logoUrl} className={classes.bigAvatar}/><br/>
+                <Typography type="subheading" component="h2" className={classes.subheading}>
+                    {this.state.shop.description}
+                </Typography><br/>
+        </CardContent>
+    }
 }
 
 export default withStyles(styles)(Shop)
