@@ -58,10 +58,15 @@ const listByOwner = (req, res) => {
     }).populate('owner', '_id name')
 }
 
+const read = (req, res) => {
+    return res.json(req.shop)
+}
+
 export default {
     create,
     list,
     listByOwner,
-    shopByID
+    shopByID,
+    read
 
 }
