@@ -47,19 +47,35 @@ class Shop extends Component {
 
         const {classes} = this.props
 
-        return(<div>
-            <CardContent>
-                <Typography type="headline" component="h2" className={classes.title}>
-                    {this.state.shop.name}
-                </Typography>
-                <br/>
-                <Avatar src={logoUrl} className={classes.bigAvatar}/><br/>
-                    <Typography type="subheading" component="h2" className={classes.subheading}>
-                        {this.state.shop.description}
-                    </Typography><br/>
-            </CardContent>
+        return (<div className={classes.root}>
+            <Grid >
+                <Grid >
+                    <Card className={classes.card}>
+                        <CardContent>
+                            <Typography type="headline" component="h2" className={classes.title}>
+                                {this.state.shop.name}
+                            </Typography>
+                            <br/>
+                            <Avatar src={logoUrl} className={classes.bigAvatar}/><br/>
+                                <Typography type="subheading" component="h2" className={classes.subheading}>
+                                    {this.state.shop.description}
+                                </Typography><br/>
+                        </CardContent>
+                    </Card>
+                </Grid>
+                <Grid >
+                    <Card>
+                        <Typography type="title" component="h2" className={classes.productTitle}>Products</Typography>
+                        <Products products={this.state.products} searched={false}/>
+                    </Card>
+                </Grid>
+            </Grid>
         </div>)
     }
+}
+
+Shop.propTypes = {
+    classes: PropTypes.object.isRequired
 }
 
 export default withStyles(styles)(Shop)
