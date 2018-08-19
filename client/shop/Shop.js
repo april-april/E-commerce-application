@@ -6,13 +6,25 @@ const styles = theme => ({
 
 class Shop extends Component {
 
-    constructor({match}) {
+    constructor({ match }) {
         super()
         this.state = {
             shop: '',
             products:[]
         }
         this.match = match
+    }
+
+    loadProducts = () => {
+        listByShop({
+            shopId: this.match.params.shopId
+        }).then((data)=>{
+            if (data.error) {
+                this.setState({error: data.error})
+            } else {
+                this.setState({})
+            }
+        })
     }
 
     componentDidMount = () => {
