@@ -88,6 +88,14 @@ const update = (req, res, next) => {
             shop.image.data = fs.readFileSync(files.image.path)
             shop.image.contentType = files.image.type
         }
+        shop.save((err) => {
+            if (err) {
+                return res.status(400).send({
+                    error: errorHandler.getErrorMessage(err)
+                })
+            }
+            res.json(shop)
+        })
     })
 }
 
