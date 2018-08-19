@@ -1,4 +1,13 @@
-import React, { Component } from 'react'
+import React, {Component} from 'react'
+import Card, {CardContent} from 'material-ui/Card'
+import Typography from 'material-ui/Typography'
+import Avatar from 'material-ui/Avatar'
+import Grid from 'material-ui/Grid'
+import PropTypes from 'prop-types'
+import {withStyles} from 'material-ui/styles'
+import {read} from './api-shop.js'
+import Products from './../product/Products'
+import {listByShop} from './../product/api-product.js'
 
 const styles = theme => ({
     root: {}
@@ -47,9 +56,10 @@ class Shop extends Component {
 
         const {classes} = this.props
 
-        return (<div className={classes.root}>
-            <Grid >
-                <Grid >
+        return (
+        <div className={classes.root}>
+            <Grid container spacing={24}>
+                <Grid item xs={4} sm={4}>
                     <Card className={classes.card}>
                         <CardContent>
                             <Typography type="headline" component="h2" className={classes.title}>
@@ -63,7 +73,7 @@ class Shop extends Component {
                         </CardContent>
                     </Card>
                 </Grid>
-                <Grid >
+                <Grid item xs={8} sm={8}>
                     <Card>
                         <Typography type="title" component="h2" className={classes.productTitle}>Products</Typography>
                         <Products products={this.state.products} searched={false}/>
