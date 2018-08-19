@@ -6,6 +6,15 @@ const styles = theme => ({
 
 class Shop extends Component {
 
+    constructor({match}) {
+        super()
+        this.state = {
+            shop: '',
+            products:[]
+        }
+        this.match = match
+    }
+
     componentDidMount = () => {
         this.loadProducts()
         read({
