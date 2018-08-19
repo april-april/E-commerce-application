@@ -62,11 +62,22 @@ const read = (req, res) => {
     return res.json(req.shop)
 }
 
+const isOwner = (req, res, next) => {
+    const isOwner = req.shop && req.auth && req.shop.owner._id == req.auth._id
+    if (!isOwner) {
+        return res.status('403').json({
+            error: "User is not authorized"
+        })
+    }
+    next()
+}
+
 export default {
     create,
     list,
     listByOwner,
     shopByID,
-    read
+    read,
+    isOwner
 
 }
