@@ -72,12 +72,32 @@ const isOwner = (req, res, next) => {
     next()
 }
 
+const update = (req, res, next) => {
+    let form = new formidable.IncomingForm()
+    form.keepExtensions = true
+    form.parse(req, (err, fields, files) => {
+        if (err) {
+            res.status(400).json({
+                message: "Photo could not be uploaded"
+            })
+        }
+        let shop = req.shop
+        shop = _.extend(shop, fields)
+        shop.updated = Date.now()
+        if(files.image){
+            shop.image.data = fs.readFileSync(files.image.path)
+            shop.image.contentType = files.image.type
+        }
+    })
+}
+
 export default {
     create,
     list,
     listByOwner,
     shopByID,
     read,
-    isOwner
+    isOwner,
+    update
 
 }
