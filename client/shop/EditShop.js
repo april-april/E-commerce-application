@@ -19,7 +19,17 @@ class EditShop extends Component {
     }
 
     componentDidMount = () => {
-
+        this.shopData = new FormData()
+        const jwt = auth.isAuthenticated()
+        read({
+            shopId: this.match.params.shopId
+        }, {t: jwt.token}).then((data) => {
+            if (data.error) {
+                this.setState({error: data.error})
+            } else {
+                this.setState({id: data._id, name: data.name, description: data.description, owner: data.owner.name})
+            }
+        })
     }
 
     clickSubmit = () => {
@@ -35,6 +45,13 @@ class EditShop extends Component {
                 this.setState({'redirect': true})
             }
         })
+    }
+    handleChange = name => event => {
+        const value = name === 'image'
+            ? event.target.files[0]
+            : event.target.value
+        this.shopData.set(name, value)
+        this.setState({ [name]: value })
     }
 }
 
