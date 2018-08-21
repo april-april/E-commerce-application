@@ -51,8 +51,9 @@ const update = (params, credentials, shop) => {
         },
         body: shop
     }).then((response) => {
+        return response.json()
     }).catch((err) => {
-    
+        console.log(err)
     })
 }
 
@@ -60,5 +61,6 @@ export {
     create,
     list,
     listByOwner,
-    read
+    read,
+    update
 }
