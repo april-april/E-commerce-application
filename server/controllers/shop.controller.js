@@ -99,6 +99,18 @@ const update = (req, res, next) => {
     })
 }
 
+const remove = (req, res, next) => {
+    let shop = req.shop
+    shop.remove((err, deletedShop) => {
+        if (err) {
+            return res.status(400).json({
+                error: errorHandler.getErrorMessage(err)
+            })
+        }
+        res.json(deletedShop)
+    })
+}
+
 export default {
     create,
     list,
@@ -106,6 +118,7 @@ export default {
     shopByID,
     read,
     isOwner,
-    update
+    update,
+    remove
 
 }
