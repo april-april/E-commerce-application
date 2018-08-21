@@ -111,6 +111,16 @@ const remove = (req, res, next) => {
     })
 }
 
+const remove = (params, credentials) => {
+    return fetch('/api/shops/' + params.shopId, {
+        method: 'DELETE',
+    }).then((response) => {
+        return response.json()
+    }).catch((err) => {
+        console.log(err)
+    })
+}
+
 export default {
     create,
     list,
