@@ -42,6 +42,20 @@ const read = (params, credentials) => {
     }).catch((err) => console.log(err))
 }
 
+const update = (params, credentials, shop) => {
+    return fetch('/api/shops/' + params.shopId, {
+        method: 'PUT',
+        headers: {
+            'Accept': 'application/json',
+            'Authorization': 'Bearer ' + credentials.t
+        },
+        body: shop
+    }).then((response) => {
+    }).catch((err) => {
+    
+    })
+}
+
 export {
     create,
     list,
