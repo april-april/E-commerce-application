@@ -1,5 +1,11 @@
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
+import IconButton from 'material-ui/IconButton'
+import Button from 'material-ui/Button'
+import DeleteIcon from 'material-ui-icons/Delete'
+import Dialog, {DialogActions, DialogContent, DialogContentText, DialogTitle} from 'material-ui/Dialog'
+import auth from './../auth/auth-helper'
+import {remove} from './api-shop.js'
 
 class DeleteShop extends Component {
     state = {
@@ -26,7 +32,30 @@ class DeleteShop extends Component {
         this.setState({open: false})
     }
     render() {
-
+        return (
+            <span>
+              <IconButton aria-label="Delete" onClick={this.clickButton} color="secondary">
+                    <DeleteIcon/>
+              </IconButton>
+        
+                <Dialog open={this.state.open} onClose={this.handleRequestClose}>
+                    <DialogTitle>{"Delete "+this.props.shop.name}</DialogTitle>
+                    <DialogContent>
+                        <DialogContentText>
+                            Confirm to delete your shop {this.props.shop.name}.
+                        </DialogContentText>
+                    </DialogContent>
+                    <DialogActions>
+                        <Button onClick={this.handleRequestClose} color="primary">
+                            Cancel
+                        </Button>
+                        <Button onClick={this.deleteShop} color="secondary" autoFocus="autoFocus">
+                            Confirm
+                        </Button>
+                    </DialogActions>
+                </Dialog>
+            </span>
+        )
     }
 }
 DeleteShop.propTypes = {
