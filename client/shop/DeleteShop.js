@@ -40,11 +40,6 @@ class DeleteShop extends Component {
         
                 <Dialog open={this.state.open} onClose={this.handleRequestClose}>
                     <DialogTitle>{"Delete "+this.props.shop.name}</DialogTitle>
-                    <DialogContent>
-                        <DialogContentText>
-                            Confirm to delete your shop {this.props.shop.name}.
-                        </DialogContentText>
-                    </DialogContent>
                     <DialogActions>
                         <Button onClick={this.handleRequestClose} color="primary">
                             Cancel
