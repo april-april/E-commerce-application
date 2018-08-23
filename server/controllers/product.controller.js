@@ -19,5 +19,17 @@ const create = (req, res, next) => {
             product.image.data = fs.readFileSync(files.image.path)
             product.image.contentType = files.image.type
         }
+        product.save((err, result) => {
+            if (err) {
+                return res.status(400).json({
+                    error: errorHandler.getErrorMessage(err)
+                })
+            }
+            res.json(result)
+        })
     })
+}
+
+export default {
+    create
 }
