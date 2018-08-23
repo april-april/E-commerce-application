@@ -45,6 +45,7 @@ app.use('/dist', express.static(path.join(CURRENT_WORKING_DIR, 'dist')))
 app.use('/', userRoutes)
 app.use('/', authRoutes)
 app.use('/', shopRoutes)
+app.use('/', productRoutes)
 
 
 app.get('*', (req, res) => {
