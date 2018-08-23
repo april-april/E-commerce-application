@@ -2,8 +2,8 @@ import Shop from '../models/shop.model'
 
 const create = (req, res, next) => {
     let form = new formidable.IncomingForm()
-        form.keepExtensions = true
-        form.parse(req, (err, fields, files) => {
+    form.keepExtensions = true
+    form.parse(req, (err, fields, files) => {
         if (err) {
             res.status(400).json({
                 message: "Image could not be uploaded"
@@ -18,7 +18,7 @@ const create = (req, res, next) => {
         shop.save((err, result) => {
             if (err) {
                 return res.status(400).json({
-                error: errorHandler.getErrorMessage(err)
+                    error: errorHandler.getErrorMessage(err)
                 })
             }
             res.status(200).json(result)

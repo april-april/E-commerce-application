@@ -79,7 +79,7 @@ const isSeller = (req, res, next) => {
 	const isSeller = req.profile && req.profile.seller
 	if (!isSeller) {
 		return res.status('403').json({
-			error: "User is not a seller"
+			  error: "User is not a seller"
 		})
 	}
 	next()
