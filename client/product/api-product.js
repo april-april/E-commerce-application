@@ -11,3 +11,17 @@ const create = (params, credentials, product) => {
             return response.json()
         }).catch((err) => console.log(err))
 }
+
+const listByShop = (params) => {
+    return fetch('/api/products/by/'+params.shopId, {
+        method: 'GET'
+    }).then((response) => {
+        return response.json()
+    }).catch((err) => {
+        console.log(err)
+    })
+}
+
+export {
+    create, listByShop
+}
