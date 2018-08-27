@@ -10,7 +10,34 @@ import Products from './../product/Products'
 import {listByShop} from './../product/api-product.js'
 
 const styles = theme => ({
-    root: {}
+    root: {
+        flexGrow: 1,
+        margin: 30,
+    },
+    card: {
+        textAlign: 'center',
+        paddingBottom: theme.spacing.unit * 2
+    },
+    title: {
+        margin: theme.spacing.unit * 2,
+        color: theme.palette.protectedTitle,
+        fontSize: '1.2em'
+    },
+    subheading: {
+        marginTop: theme.spacing.unit,
+        color: theme.palette.openTitle
+    },
+    bigAvatar: {
+        width: 100,
+        height: 100,
+        margin: 'auto'
+    },
+    productTitle: {
+        padding:`${theme.spacing.unit * 3}px ${theme.spacing.unit * 2.5}px ${theme.spacing.unit}px ${theme.spacing.unit * 2}px`,
+        color: theme.palette.openTitle,
+        width: '100%',
+        fontSize: '1.2em'
+    }
 })
 
 class Shop extends Component {
