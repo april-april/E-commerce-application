@@ -63,9 +63,21 @@ const listLatest = (req, res) => {
 	})
 }
 
+const listRelated = (req, res) => {
+	Product.find({ "_id": { "$ne": req.product }.exec((err, products) => {
+		if (err) {
+			return res.status(400).json({
+				
+			})
+		}
+		res.json(products)
+	})
+}
+
 export default {
 	create,
 	listByShop,
 	listLatest,
-	productByID
+	productByID,
+	listRelated
 }
