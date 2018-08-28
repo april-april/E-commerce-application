@@ -64,10 +64,10 @@ const listLatest = (req, res) => {
 }
 
 const listRelated = (req, res) => {
-	Product.find({ "_id": { "$ne": req.product }.exec((err, products) => {
+	Product.find({ "_id": { "$ne": req.product }, "category": req.product.category}).limit(5).populate('shop', '_id name').exec((err, products) => {
 		if (err) {
 			return res.status(400).json({
-				
+				error: errorHandler.getErrorMessage(err)
 			})
 		}
 		res.json(products)
