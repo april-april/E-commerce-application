@@ -50,6 +50,16 @@ class MyProducts extends Component {
     const {classes} = this.props
     return (
       <Card className={classes.products}>
+        <Typography type="title" className={classes.title}>
+          Products
+          <span className={classes.addButton}>
+            <Link to={"/seller/"+this.props.shopId+"/products/new"}>
+				<Button color="primary" variant="raised">
+					<Icon className={classes.leftIcon}>add_box</Icon>  New Product
+				</Button>
+            </Link>
+          </span>
+        </Typography>
         <List dense>
         {this.state.products.map((product, i) => {
             return <span key={i}>
@@ -70,7 +80,7 @@ class MyProducts extends Component {
                 <ListItemSecondaryAction>
                   <Link to={"/seller/"+product.shop._id+"/"+product._id+"/edit"}>
                     <IconButton aria-label="Edit" color="primary">
-                      <Edit/>
+                      	<Edit/>
                     </IconButton>
                   </Link>
                   <DeleteProduct
@@ -85,8 +95,8 @@ class MyProducts extends Component {
   }
 }
 MyProducts.propTypes = {
-  classes: PropTypes.object.isRequired,
-  shopId: PropTypes.string.isRequired
+	classes: PropTypes.object.isRequired,
+	shopId: PropTypes.string.isRequired
 }
 
 export default withStyles(styles)(MyProducts)
