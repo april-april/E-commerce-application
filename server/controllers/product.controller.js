@@ -30,6 +30,17 @@ const create = (req, res, next) => {
 	})
 }
 
+const productByID = (req, res, next, id) => {
+	Product.findById(id).populate('shop', '_id name').exec((err, product) => {
+		if (err || !product)
+			return res.status('400').json({
+				error: "Product not found"
+			})
+		req.product = product
+		next()
+	})
+}
+
 const listByShop = (req, res) => {
 	Product.find({shop: req.shop._id}, (err, products) => {
 		if (err) {
@@ -55,5 +66,6 @@ const listLatest = (req, res) => {
 export default {
 	create,
 	listByShop,
-	listLatest
+	listLatest,
+	productByID
 }
