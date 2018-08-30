@@ -23,7 +23,31 @@ const styles = theme => ({
 		color: theme.palette.openTitle,
 		fontSize: '1.1em'
 	},
+	viewButton: {
+		verticalAlign: 'middle'
+	},
 
+	iconButton: {
+		width: '28px',
+		height: '28px'
+	},
+	productTitle: {
+		fontSize: '1.15em',
+		marginBottom: '5px'
+	},
+	subheading: {
+		color: 'rgba(88, 114, 128, 0.67)'
+	},
+	actions: {
+		float: 'right',
+		marginRight: '6px'
+	},
+	price: {
+		display: 'inline',
+		lineHeight: '3',
+		paddingLeft: '8px',
+		color: theme.palette.text.secondary
+	}
 })
 
 class Suggestions extends Component {
