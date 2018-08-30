@@ -26,7 +26,32 @@ const styles = theme => ({
 	viewButton: {
 		verticalAlign: 'middle'
 	},
-
+	card: {
+		width: '100%',
+		display: 'inline-flex'
+	},
+	details: {
+		display: 'inline-block',
+		width: "100%"
+	},
+	content: {
+		flex: '1 0 auto',
+		padding: '16px 8px 0px'
+	},
+	cover: {
+		width: '65%',
+		height: 130,
+		margin: '8px'
+	},
+	controls: {
+		marginTop: '8px'
+	},
+	date: {
+		color: 'rgba(0, 0, 0, 0.4)'
+	},
+	icon: {
+		verticalAlign: 'sub'
+	},
 	iconButton: {
 		width: '28px',
 		height: '28px'
