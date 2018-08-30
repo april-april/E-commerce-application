@@ -13,6 +13,16 @@ import Card, { CardContent, CardMedia } from 'material-ui/Card'
 import AddToCart from './../cart/AddToCart'
 
 const styles = theme => ({
+	root: theme.mixins.gutters({
+		padding: theme.spacing.unit,
+		paddingBottom: 24,
+		backgroundColor: '#80808024'
+	}),
+	title: {
+		margin: `${theme.spacing.unit * 4}px 0 ${theme.spacing.unit * 2}px`,
+		color: theme.palette.openTitle,
+		fontSize: '1.1em'
+	},
 
 })
 
