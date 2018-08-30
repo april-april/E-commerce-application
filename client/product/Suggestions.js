@@ -33,7 +33,17 @@ class Suggestions extends Component {
 									title={item.name}
 								/>
 								<div className={classes.details}>
-
+									<CardContent className={classes.content}>
+										<Link to={'/product/'+item._id}><Typography type="title" component="h3" className={classes.productTitle} color="primary">{item.name}</Typography></Link>
+										<Link to={'/shops/'+item.shop._id}>
+											<Typography type="subheading" className={classes.subheading}>
+												<Icon className={classes.icon}>shopping_basket</Icon> {item.shop.name}
+											</Typography>
+										</Link>
+										<Typography component="p" className={classes.date}>
+												Added on {(new Date(item.created)).toDateString()}
+										</Typography>
+									</CardContent>
 									<div className={classes.controls}>
 										<Typography type="subheading" component="h3" className={classes.price} color="primary">$ {item.price}</Typography>
 											<span className={classes.actions}>
