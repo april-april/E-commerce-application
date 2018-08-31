@@ -74,6 +74,11 @@ const listRelated = (req, res) => {
 	})
 }
 
+const read = (req, res) => {
+	req.product.image = undefined
+	return res.json(req.product)
+}
+
 export default {
 	create,
 	listByShop,
