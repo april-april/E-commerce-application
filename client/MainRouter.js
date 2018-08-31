@@ -35,6 +35,7 @@ class MainRouter extends Component {
                 <Route path="/signin" component={Signin}/>
                 <Route path="/user/:userId" component={Profile}/>
                 <Route path="/shops/all" component={Shops}/>
+                <Route path="/product/:productId" component={Product}/>
                 <PrivateRoute path="/user/edit/:userId" component={EditProfile}/>
                 <PrivateRoute path="/seller/shop/new" component={NewShop}/>
                 <PrivateRoute path="/seller/shops" component={MyShops}/>

@@ -12,6 +12,14 @@ const create = (params, credentials, product) => {
         }).catch((err) => console.log(err))
 }
 
+const read = (params) => {
+    return fetch('/api/products/' + params.productId, {
+        method: 'GET'
+    }).then((response) => {
+        return response.json()
+    }).catch((err) => console.log(err))
+}
+
 const listByShop = (params) => {
     return fetch('/api/products/by/'+params.shopId, {
         method: 'GET'
@@ -23,5 +31,5 @@ const listByShop = (params) => {
 }
 
 export {
-    create, listByShop
+    create, listByShop, read
 }
