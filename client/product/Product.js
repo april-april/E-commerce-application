@@ -24,6 +24,29 @@ class Product extends Component {
 		}
 		this.match = match
 	}
+	loadProduct = (productId) => {
+		read({productId: productId}).then((data) => {
+			if (data.error) {
+				this.setState({error: data.error})
+			} else {
+				this.setState({product: data})
+				listRelated({
+					productId: data._id}).then((data) => {
+					if (data.error) {
+						console.log(data.error)
+					} else {
+						this.setState({suggestions: data})
+					}
+				})
+		 }
+		})
+	}
+	componentDidMount = () => {
+		this.loadProduct(this.match.params.productId)
+	}
+	componentWillReceiveProps = (props) => {
+		this.loadProduct(props.match.params.productId)
+	}
 
 	render() {
 		const {classes} = this.props
