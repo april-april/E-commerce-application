@@ -95,6 +95,14 @@ const update = (req, res, next) => {
 			product.image.data = fs.readFileSync(files.image.path)
 			product.image.contentType = files.image.type
 		}
+		product.save((err, result) => {
+			if (err) {
+				return res.status(400).send({
+					error: errorHandler.getErrorMessage(err)
+				})
+			}
+			res.json(result)
+		})
 	})
 }
 
@@ -105,5 +113,6 @@ export default {
 	productByID,
 	listRelated,
 	read,
+	update
 
 }
