@@ -38,9 +38,18 @@ const listLatest = () => {
     }).catch((err) => console.log(err))
 }
 
+const listRelated = (params) => {
+    return fetch('/api/products/related/'+params.productId, {
+        method: 'GET',
+    }).then(response => {
+        return response.json()
+    }).catch((err) => console.log(err))
+}
+
 export {
     create, 
     listByShop, 
     read,
-    listLatest
+    listLatest,
+    listRelated
 }
