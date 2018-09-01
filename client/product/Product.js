@@ -11,6 +11,28 @@ import Suggestions from './../product/Suggestions'
 import AddToCart from './../cart/AddToCart'
 
 const styles = theme => ({
+	root: {
+		flexGrow: 1,
+		margin: 30,
+	},
+	flex:{
+		display:'flex'
+	},
+	card: {
+		padding:'24px 40px 40px'
+	},
+	subheading: {
+		margin: '24px',
+		color: theme.palette.openTitle
+	},
+	price: {
+		padding: '16px',
+		margin: '16px 0px',
+		display: 'flex',
+		backgroundColor: '#93c5ae3d',
+		fontSize: '1.3em',
+		color: '#375a53',
+	}
 
 })
 
