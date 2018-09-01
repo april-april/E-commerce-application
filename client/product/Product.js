@@ -32,6 +32,30 @@ const styles = theme => ({
 		backgroundColor: '#93c5ae3d',
 		fontSize: '1.3em',
 		color: '#375a53',
+	},
+	media: {
+		height: 200,
+		display: 'inline-block',
+		width: '50%',
+		marginLeft: '24px'
+	},
+	icon: {
+		verticalAlign: 'sub'
+	},
+	link:{
+		color: '#3e4c54b3',
+		fontSize: '0.9em'
+	},
+	addCart: {
+		width: '35px',
+		height: '35px',
+		padding: '10px 12px',
+		borderRadius: '0.25em',
+		backgroundColor: '#5f7c8b'
+	},
+	action: {
+		margin: '8px 24px',
+		display: 'inline-block'
 	}
 
 })
