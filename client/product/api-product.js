@@ -30,6 +30,17 @@ const listByShop = (params) => {
     })
 }
 
+const listLatest = () => {
+    return fetch('/api/products/latest', {
+        method: 'GET',
+    }).then(response => {
+        return response.json()
+    }).catch((err) => console.log(err))
+}
+
 export {
-    create, listByShop, read
+    create, 
+    listByShop, 
+    read,
+    listLatest
 }
