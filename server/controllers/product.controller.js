@@ -79,10 +79,31 @@ const read = (req, res) => {
 	return res.json(req.product)
 }
 
+const update = (req, res, next) => {
+	let form = new formidable.IncomingForm()
+	form.keepExtensions = true
+	form.parse(req, (err, fields, files) => {
+		if (err) {
+			return res.status(400).json({
+				message: "Photo could not be uploaded"
+			})
+		}
+		let product = req.product
+		product = _.extend(product, fields)
+		product.updated = Date.now()
+		if(files.image){
+			product.image.data = fs.readFileSync(files.image.path)
+			product.image.contentType = files.image.type
+		}
+	})
+}
+
 export default {
 	create,
 	listByShop,
 	listLatest,
 	productByID,
-	listRelated
+	listRelated,
+	read,
+
 }

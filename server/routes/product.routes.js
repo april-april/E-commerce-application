@@ -14,6 +14,9 @@ router.route('/api/products/related/:productId')
 
 router.route('/api/products/:productId')
     .get(productCtrl.read)
+
+router.route('/api/product/:shopId/:productId')
+    .put(authCtrl.requireSignin, shopCtrl.isOwner, productCtrl.update)
     
 router.param('shopId', shopCtrl.shopByID)
 router.param('productId', productCtrl.productByID)
