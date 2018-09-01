@@ -61,6 +61,28 @@ class NewProduct extends Component {
 	componentDidMount = () => {
 		this.productData = new FormData()
 	}
+	handleChange = name => event => {
+		const value = name === 'image'
+			? event.target.files[0]
+			: event.target.value
+		this.productData.set(name, value)
+		this.setState({ [name]: value })
+	}
+
+	clickSubmit = () => {
+		const jwt = auth.isAuthenticated()
+		create({
+			shopId: this.match.params.shopId
+		}, {
+			t: jwt.token
+		}, this.productData).then((data) => {
+			if (data.error) {
+				this.setState({error: data.error})
+			} else {
+				this.setState({error: '', redirect: true})
+			}
+		})
+	}
 
 	render() {
 		if (this.state.redirect) {
