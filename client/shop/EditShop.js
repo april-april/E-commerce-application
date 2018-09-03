@@ -32,7 +32,29 @@ const styles = theme => ({
 		marginTop: theme.spacing.unit * 2,
 		color: theme.palette.openTitle
 	},
-	
+	error: {
+		verticalAlign: 'middle'
+	},
+	textField: {
+		marginLeft: theme.spacing.unit,
+		marginRight: theme.spacing.unit,
+		width: 400
+	},
+	submit: {
+		margin: 'auto',
+		marginBottom: theme.spacing.unit * 2
+	},
+	bigAvatar: {
+		width: 60,
+		height: 60,
+		margin: 'auto'
+	},
+	input: {
+		display: 'none'
+	},
+	filename:{
+		marginLeft:'10px'
+	}
 })
 
 class EditShop extends Component {
