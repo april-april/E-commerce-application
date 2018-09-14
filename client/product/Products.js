@@ -7,7 +7,15 @@ import {Link} from 'react-router-dom'
 import AddToCart from './../cart/AddToCart'
 
 const styles = theme => ({
-
+    root: {
+        display: 'flex',
+        flexWrap: 'wrap',
+        justifyContent: 'space-around',
+        overflow: 'hidden',
+        background: theme.palette.background.paper,
+        textAlign: 'left',
+        padding: '0 8px'
+    },
 })
 
 class Products extends Component {
