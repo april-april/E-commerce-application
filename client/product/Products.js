@@ -16,6 +16,20 @@ const styles = theme => ({
         textAlign: 'left',
         padding: '0 8px'
     },
+    container: {
+        minWidth: '100%',
+        paddingBottom: '14px'
+    },
+    gridList: {
+        width: '100%',
+        minHeight: 200,
+        padding: '16px 0 10px'
+    },
+    title: {
+        padding:`${theme.spacing.unit * 3}px ${theme.spacing.unit * 2.5}px ${theme.spacing.unit * 2}px`,
+        color: theme.palette.openTitle,
+        width: '100%'
+    }
 })
 
 class Products extends Component {
