@@ -29,7 +29,23 @@ const styles = theme => ({
         padding:`${theme.spacing.unit * 3}px ${theme.spacing.unit * 2.5}px ${theme.spacing.unit * 2}px`,
         color: theme.palette.openTitle,
         width: '100%'
-    }
+    },
+    tile: {
+		textAlign: 'center'
+	},
+	image: {
+		height: '100%'
+	},
+	tileBar: {
+		backgroundColor: 'rgba(0, 0, 0, 0.72)',
+		textAlign: 'left'
+	},
+	tileTitle: {
+		fontSize:'1.1em',
+		marginBottom:'5px',
+		color:'rgb(189, 222, 219)',
+		display:'block'
+	}
 })
 
 class Products extends Component {
