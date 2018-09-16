@@ -59,6 +59,13 @@ class EditProduct extends Component {
 			}
 		})
 	}
+	handleChange = name => event => {
+		const value = name === 'image'
+			? event.target.files[0]
+			: event.target.value
+		this.productData.set(name, value)
+		this.setState({ [name]: value })
+	}
 
 	render() {
 
