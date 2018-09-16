@@ -1,5 +1,6 @@
 # e-commerce application (in progress)
-still in progress fam
+
+Application is almost complete. Just need to add payment processing with Stripe and order management
 
 
 ## Getting Started
@@ -29,12 +30,10 @@ npm start
 * [MongoDB](https://www.mongodb.com/) 
 * [React](https://reactjs.org/)
 
-## Contributing
-Hmm...
 
 ## Authors
 
-* **Vincent Luong** - *Initial work* - [Vincent Luong](https://github.com/april-april)
+* **Vincent Luong** - *Creator* - [Vincent Luong](https://github.com/april-april)
 * **Thomas Nguyen** - *Design and Database* - [Thomas Nguyen](https://github.com/thomasnguyen)
 
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.

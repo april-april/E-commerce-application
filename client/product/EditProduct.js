@@ -68,7 +68,6 @@ class EditProduct extends Component {
 	}
 
 	render() {
-
 		const {classes} = this.props
 		return (<div>
 			<Card className={classes.card}>
@@ -104,7 +103,10 @@ class EditProduct extends Component {
 							{this.state.error}</Typography>)
 					}
 				</CardContent>
-
+				<CardActions>
+					<Button color="primary" variant="raised" onClick={this.clickSubmit} className={classes.submit}>Update</Button>
+					<Link to={'/seller/shops/edit/'+this.match.params.shopId} className={classes.submit}><Button variant="raised">Cancel</Button></Link>
+				</CardActions>
 			</Card>
 		</div>)
 	}
