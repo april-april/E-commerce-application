@@ -44,6 +44,21 @@ class EditProduct extends Component {
 			}
 		})
 	}
+	clickSubmit = () => {
+		const jwt = auth.isAuthenticated()
+		update({
+			shopId: this.match.params.shopId,
+			productId: this.match.params.productId
+		}, {
+			t: jwt.token
+		}, this.productData).then((data) => {
+			if (data.error) {
+				this.setState({error: data.error})
+			} else {
+				this.setState({'redirect': true})
+			}
+		})
+	}
 
 	render() {
 
