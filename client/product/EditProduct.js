@@ -84,7 +84,17 @@ class EditProduct extends Component {
 							<FileUpload/>
 						</Button>
 					</label> <span className={classes.filename}>{this.state.image ? this.state.image.name : ''}</span><br/>
-					
+					<TextField id="name" label="Name" className={classes.textField} value={this.state.name} onChange={this.handleChange('name')} margin="normal"/><br/>
+					<TextField
+						id="multiline-flexible"
+						label="Description"
+						multiline
+						rows="3"
+						value={this.state.description}
+						onChange={this.handleChange('description')}
+						className={classes.textField}
+						margin="normal"
+					/><br/>
 					<TextField id="category" label="Category" className={classes.textField} value={this.state.category} onChange={this.handleChange('category')} margin="normal"/><br/>
 					<TextField id="quantity" label="Quantity" className={classes.textField} value={this.state.quantity} onChange={this.handleChange('quantity')} type="number" margin="normal"/><br/>
 					<TextField id="price" label="Price" className={classes.textField} value={this.state.price} onChange={this.handleChange('price')} type="number" margin="normal"/><br/>
