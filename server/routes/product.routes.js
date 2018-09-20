@@ -17,6 +17,7 @@ router.route('/api/products/:productId')
 
 router.route('/api/product/:shopId/:productId')
     .put(authCtrl.requireSignin, shopCtrl.isOwner, productCtrl.update)
+    .delete(authCtrl.requireSignin, shopCtrl.isOwner, productCtrl.remove)
     
 router.param('shopId', shopCtrl.shopByID)
 router.param('productId', productCtrl.productByID)
