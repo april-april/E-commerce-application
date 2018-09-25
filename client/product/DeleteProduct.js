@@ -7,6 +7,11 @@ class DeleteProduct extends Component {
 	state = {
 		open: false
 	}
+
+	clickButton = () => {
+		this.setState({open: true})
+	}
+	
 	deleteProduct = () => {
 		const jwt = auth.isAuthenticated()
 		remove({
