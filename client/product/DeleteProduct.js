@@ -32,6 +32,14 @@ class DeleteProduct extends Component {
 	}
 
 	render() {
+		return (
+			<span>
+				<IconButton aria-label="Delete" onClick={this.clickButton} color="secondary">
+        			<DeleteIcon/>
+      			</IconButton>
+
+			</span>
+		)
 	
 	}
 }
