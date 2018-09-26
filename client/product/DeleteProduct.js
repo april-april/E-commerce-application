@@ -27,6 +27,9 @@ class DeleteProduct extends Component {
 			}
 		})
 	}
+	handleRequestClose = () => {
+		this.setState({open: false})
+	}
 
 	render() {
 	
