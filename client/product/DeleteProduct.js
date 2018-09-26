@@ -37,6 +37,17 @@ class DeleteProduct extends Component {
 				<IconButton aria-label="Delete" onClick={this.clickButton} color="secondary">
         			<DeleteIcon/>
       			</IconButton>
+				<Dialog open={this.state.open} onClose={this.handleRequestClose}>
+
+					<DialogContent>
+						<DialogContentText>
+							delete your product {this.props.product.name}.
+						</DialogContentText>
+					</DialogContent>
+					
+				</Dialog>
+
+
 
 			</span>
 		)
