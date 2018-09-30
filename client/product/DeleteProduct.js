@@ -42,7 +42,7 @@ class DeleteProduct extends Component {
         			<DeleteIcon/>
       			</IconButton>
 				<Dialog open={this.state.open} onClose={this.handleRequestClose}>
-
+					<DialogTitle>{"Delete "+this.props.shop.name}</DialogTitle>
 					<DialogContent>
 						<DialogContentText>
 							delete your product {this.props.product.name}.
